@@ -18,14 +18,14 @@ public class Customer {
 
     private String city;
 
-    private long workingarea;
+    private String workingarea;
 
-    private long country;
+    private String country;
 
     private String grade;
 
     private double openingamount;
-
+    private double paymentamount;
     private double receiveamount;
 
     private double outstandingamount;
@@ -68,19 +68,19 @@ public class Customer {
         this.city = city;
     }
 
-    public long getWorkingarea() {
+    public String getWorkingarea() {
         return workingarea;
     }
 
-    public void setWorkingarea(long workingarea) {
+    public void setWorkingarea(String workingarea) {
         this.workingarea = workingarea;
     }
 
-    public long getCountry() {
+    public String getCountry() {
         return country;
     }
 
-    public void setCountry(long country) {
+    public void setCountry(String country) {
         this.country = country;
     }
 
@@ -98,6 +98,14 @@ public class Customer {
 
     public void setOpeningamount(double openingamount) {
         this.openingamount = openingamount;
+    }
+
+    public double getPaymentamount() {
+        return paymentamount;
+    }
+
+    public void setPaymentamount(double paymentamount) {
+        this.paymentamount = paymentamount;
     }
 
     public double getReceiveamount() {
