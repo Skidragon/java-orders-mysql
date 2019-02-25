@@ -2,6 +2,9 @@ package com.lambdaschool.ordersmysql.controllers;
 
 import com.lambdaschool.ordersmysql.models.Customer;
 import com.lambdaschool.ordersmysql.repositories.CustomerRepository;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -15,14 +18,14 @@ import java.util.Optional;
 public class CustomerController {
     @Autowired
     CustomerRepository custRepo;
-// Apply Swagger documentation later
-//    @ApiOperation(value = "List All Customers", response = List.class)
-//    @ApiResponses(value ={
-//            @ApiResponse(code = 200, message = "Successfully recetrieve list"),
-//            @ApiResponse(code = 401, message = "You are not authorized to the view the resource"),
-//            @ApiResponse(code = 403, message = "Accessing the resource you were trying to reach is forbidden"),
-//            @ApiResponse(code = 404, message = "The resource you were trying to reach is not found")
-//    })
+
+    @ApiOperation(value = "List All Customers", response = List.class)
+    @ApiResponses(value ={
+            @ApiResponse(code = 200, message = "Successfully retrieves list"),
+            @ApiResponse(code = 401, message = "You are not authorized to the view the resource"),
+            @ApiResponse(code = 403, message = "Accessing the resource you were trying to reach is forbidden"),
+            @ApiResponse(code = 404, message = "The resource you were trying to reach is not found")
+    })
     @GetMapping("")
     public List<Customer> allCustomers() {
         return custRepo.findAll();
